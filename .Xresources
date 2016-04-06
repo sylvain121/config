@@ -3,17 +3,20 @@ XTerm*locale: true
 XTerm*metaSendsEscape: true
 Xterm*saveLines: 4096
 
-
-URxvt.font: xft:DejaVu Sans Mono:size=10
-URxvt.boldFont: xft:DejaVu Sans Mono:size=10
-
-
 URxvt*saveLines: 10000
 URxvt*scrollBar: true
 URxvt*scrollBar_right: true
 URxvt*scrollColor: #c2dd5a
 URxvt*scrollBar_floating: true
 URxvt*scrollstyle: plain
+
+Rxvt.perl-ext-common: ...,keyboard-select,resize-font
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
+
 
 ! drop in Solarized colorscheme for Xresources
 !!
