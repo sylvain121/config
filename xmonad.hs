@@ -12,5 +12,5 @@ main = xmonad $ azertyConfig
 	[
 	((0                     , 0x1008FF11), spawn "amixer set Master 2-"),
 	((0                     , 0x1008FF13), spawn "amixer set Master 2+"),
-	((0                     , 0x1008FF12), spawn "amixer set Master toggle")
+	((0                     , 0x1008FF12), spawn "amixer set Master toggle; amixer set Speaker+LO unmute")
 	]

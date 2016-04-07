@@ -13,6 +13,9 @@ call plug#begin('~/.vim/plugged')
 " solarize theme
 Plug 'altercation/vim-colors-solarized'
 
+"editor config plugin
+Plug 'editorconfig/editorconfig-vim'
+
 "" Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' 
 Plug 'honza/vim-snippets'
@@ -86,3 +89,4 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+let g:syntastic_javascript_checkers = ['eslint']
