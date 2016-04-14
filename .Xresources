@@ -10,7 +10,7 @@ URxvt*scrollColor: #c2dd5a
 URxvt*scrollBar_floating: true
 URxvt*scrollstyle: plain
 
-Rxvt.perl-ext-common: ...,keyboard-select,resize-font
+URxvt.perl-ext-common: ...,keyboard-select,resize-font
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 URxvt.resize-font.smaller: C-Down

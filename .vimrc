@@ -13,8 +13,13 @@ call plug#begin('~/.vim/plugged')
 " solarize theme
 Plug 'altercation/vim-colors-solarized'
 
+"auto save file
+Plug 'vim-scripts/vim-auto-save'
+
 "editor config plugin
 Plug 'editorconfig/editorconfig-vim'
+
+Plug 'majutsushi/tagbar'
 
 "" Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' 
@@ -90,3 +95,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint']
+
+" auto save set to 1 to enable
+let g:auto_save = 0
+
+nnoremap <F8> :TagbarToggle<CR>
