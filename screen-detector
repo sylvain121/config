@@ -1,41 +1,47 @@
 #!/bin/bash
 #actual mode
-SCREEN_MODE="DESKTOP"
+SCREEN_MODE="_"
 
 
 function setLaptopMode {
-	if [ "$SCEEN_MODE" = "DESKTOP" ]
+	if [ "$SCEEN_MODE" != "LAPTOP" ]
 	then
 			xrandr --output HDMI3 --off
 			xrandr --output VGA1 --off
 			xrandr --output LVDS1 --auto
-			SCREEN_MODE = LAPTOP
+			SCREEN_MODE=LAPTOP
 	else 
 		echo "Already in ldaptop mode => do nothing"
 			fi
 }
 
 function setDesktopMode {
-	if [ "$SCREEN_MODE" = "LAPTOP" ]
+	if [ "$SCREEN_MODE" != "DESKTOP" ]
 	then 
 			xrandr --output LVDS1 --off
 			xrandr --output VGA1 --auto --primary
+			xrandr --output HDMI3 --auto
 			xrandr --output HDMI3 --right-of VGA1
+			SCREEN_MODE=DESKTOP
 	else 
 		echo "Already in desktop mode => do nothing"
 			fi
 }
 
 function isVGA1Connected {
-	! xrandr | grep "^VGA1" | grep "disconnected"
+	! xrandr | grep "VGA1" | grep "disconnected"
 }
 
 function isHDMI3Connected {
-	! xrandr | grep "^HDMI3" | grep "disconnected"
+	! xrandr | grep "HDMI3" | grep "disconnected"
 }
 
 if isVGA1Connected && isHDMI3Connected
 then 
+	setDesktopMode
+else
+	setLaptopMode
+fi
 
 
 while true
