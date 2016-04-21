@@ -39,8 +39,12 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/vim-easy-align'
 " autocompte plugin
 
-" You Complete Me : need : cmake python nodejs
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer'  }
+" You Complete Me : need : cmake python nodejs # FIXME disabled not currently
+" working
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer'  }
+
+"tern javascript autocomplete
+Plug 'ternjs/tern_for_vim'
 
 " Add plugins to &runtimepath
 Plug 'tpope/vim-sensible'
@@ -48,12 +52,14 @@ Plug 'pangloss/vim-javascript'
 Plug 'alvan/vim-closetag'
 Plug 'jelera/vim-javascript-syntax' 
 Plug 'maksimr/vim-jsbeautify'
-Plug 'Nopik/vim-nerdtree-direnter'
+"Plug 'Nopik/vim-nerdtree-direnter'
 Plug 'scrooloose/syntastic'
+Plug 'moll/vim-node'
+Plug 'othree/javascript-libraries-syntax.vim'
 
-" JS autocomplete
-Plug 'ahayman/vim-nodejs-complete'
-
+"HTML5 plugin
+Plug 'othree/html5-syntax.vim'
+Plug 'othree/html5.vim'
 
 " pair bracket etc ....
 Plug 'jiangmiao/auto-pairs'
