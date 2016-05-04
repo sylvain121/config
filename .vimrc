@@ -1,3 +1,4 @@
+set encoding=utf-8
 set nocompatible
 set number
 set mouse=an
@@ -25,10 +26,11 @@ Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips' 
 Plug 'honza/vim-snippets'
 
-" On-demand loading
+" nerdtree block
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'Nopik/vim-nerdtree-direnter'
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 
 " Plugin outside ~/.vim/plugged with post-update hook
@@ -36,7 +38,7 @@ Plug 'junegunn/fzf'
 
 
 " Shorthand notation; fetches https://github.com/junegunn/m-easy-align
-Plug 'junegunn/vim-easy-align'
+"Plug 'junegunn/vim-easy-align'
 " autocompte plugin
 
 " You Complete Me : need : cmake python nodejs # FIXME disabled not currently
@@ -47,12 +49,11 @@ Plug 'junegunn/vim-easy-align'
 Plug 'ternjs/tern_for_vim'
 
 " Add plugins to &runtimepath
-Plug 'tpope/vim-sensible'
+"Plug 'tpope/vim-sensible'
 Plug 'pangloss/vim-javascript'
 Plug 'alvan/vim-closetag'
 Plug 'jelera/vim-javascript-syntax' 
 Plug 'maksimr/vim-jsbeautify'
-"Plug 'Nopik/vim-nerdtree-direnter'
 Plug 'scrooloose/syntastic'
 Plug 'moll/vim-node'
 Plug 'othree/javascript-libraries-syntax.vim'
