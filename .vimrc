@@ -14,6 +14,9 @@ call plug#begin('~/.vim/plugged')
 " solarize theme
 Plug 'altercation/vim-colors-solarized'
 
+" status bar
+Plug 'vim-airline/vim-airline'
+
 "auto save file
 Plug 'vim-scripts/vim-auto-save'
 
@@ -43,10 +46,10 @@ Plug 'junegunn/fzf'
 
 " You Complete Me : need : cmake python nodejs # FIXME disabled not currently
 " working
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer'  }
+Plug 'Valloric/YouCompleteMe', { 'do': 'git submodule update --init --recursive; ./install.py --tern-completer'  }
 
 "tern javascript autocomplete
-Plug 'ternjs/tern_for_vim'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
 " Add plugins to &runtimepath
 "Plug 'tpope/vim-sensible'
@@ -107,3 +110,4 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:auto_save = 0
 
 nnoremap <F8> :TagbarToggle<CR>
+nnoremap <C-B> :TernDef<CR>
