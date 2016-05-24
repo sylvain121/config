@@ -44,8 +44,7 @@ Plug 'junegunn/fzf'
 "Plug 'junegunn/vim-easy-align'
 " autocompte plugin
 
-" You Complete Me : need : cmake python nodejs # FIXME disabled not currently
-" working
+" You Complete Me : need : cmake python nodejs #
 Plug 'Valloric/YouCompleteMe', { 'do': 'git submodule update --init --recursive; ./install.py --tern-completer'  }
 
 "tern javascript autocomplete
