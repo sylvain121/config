@@ -6,6 +6,8 @@ filetype off
 :set regexpengine=1
 :syntax enable
 
+set hlsearch
+
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
@@ -16,6 +18,9 @@ Plug 'altercation/vim-colors-solarized'
 
 " status bar
 Plug 'vim-airline/vim-airline'
+
+
+Plug 'metakirby5/codi.vim'
 
 "auto save file
 Plug 'vim-scripts/vim-auto-save'
@@ -30,9 +35,12 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " nerdtree block
+Plug 'ryanoasis/vim-devicons'
+
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Nopik/vim-nerdtree-direnter'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 
@@ -44,7 +52,8 @@ Plug 'junegunn/fzf'
 "Plug 'junegunn/vim-easy-align'
 " autocompte plugin
 
-" You Complete Me : need : cmake python nodejs #
+" You Complete Me : need : cmake python nodejs sudo apt-get install python-dev
+" python3-dev
 Plug 'Valloric/YouCompleteMe', { 'do': 'git submodule update --init --recursive; ./install.py --tern-completer'  }
 
 "tern javascript autocomplete
