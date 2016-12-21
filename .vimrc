@@ -13,6 +13,9 @@ set omnifunc=syntaxcomplete#Complete
 
 call plug#begin('~/.vim/plugged')
 
+" gundo visual undo
+Plug 'sjl/gundo.vim'
+
 " solarize theme
 Plug 'altercation/vim-colors-solarized'
 
@@ -29,13 +32,12 @@ Plug 'vim-scripts/vim-auto-save'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'majutsushi/tagbar'
-
+Plug 'airblade/vim-gitgutter'
 "" Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' 
 Plug 'honza/vim-snippets'
 
 " nerdtree block
-Plug 'ryanoasis/vim-devicons'
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -52,6 +54,7 @@ Plug 'junegunn/fzf'
 "Plug 'junegunn/vim-easy-align'
 " autocompte plugin
 
+Plug 'ryanoasis/vim-devicons'
 " You Complete Me : need : cmake python nodejs sudo apt-get install python-dev
 " python3-dev
 Plug 'Valloric/YouCompleteMe', { 'do': 'git submodule update --init --recursive; ./install.py --tern-completer'  }
@@ -77,8 +80,16 @@ Plug 'othree/html5.vim'
 Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
+" do sudo fc-cache -f -v to reshesh font cache
+" nerd font
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
+let g:airline_powerline_fonts = 1
 set background=dark
 colorscheme solarized
+
+" gundo parameters
+let g:gundo_prefer_python3 = 1
+nnoremap <F5> :GundoToggle<CR>
 
 
 filetype plugin indent on

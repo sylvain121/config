@@ -1,12 +1,14 @@
 import XMonad
 import XMonad.Config.Azerty
 import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Hooks.SetWMName
 
 main = xmonad $ azertyConfig
 	{ 
 	terminal    = "urxvt"
 	, modMask     = mod4Mask
 	, borderWidth = 3
+	, startupHook = setWMName "LG3D"
 	}
 	`additionalKeys`
 	[

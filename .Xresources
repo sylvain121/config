@@ -1,24 +1,27 @@
-xterm*termName: xterm-256color
+xterm*termName: rxvt-unicode 
 XTerm*locale: true
 XTerm*metaSendsEscape: true
 Xterm*saveLines: 4096
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 URxvt*saveLines: 10000
 URxvt*scrollColor: #c2dd5a
 URxvt*scrollBar_floating: true
 URxvt*scrollstyle: plain
 URxvt.scrollBar: off
-URxvt.font: xft:DejaVu Sans Mono:pixelsize=14
+URxvt.font:xft:Ubuntu Mono:pixelsize=20 
+URxvt.boldFont:xft:Ubuntu Mono:pixelsize=20
 URxvt.lineSpace: 1
 
 URxvt.perl-lib: urxvt-lib/
-URxvt.perl-ext-common: ...,keyboard-select,resize-font,clipboard
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.perl-ext-common: default,matcher,resize-font,clipboard
 
+URxvt.keysym.C-S-c: perl:clipboard:copy
+URxvt.keysym.C-S-v: perl:clipboard:paste
+URxvt.clipboard.autocopy: true
 
-URxvt.keysym.M-c:   perl:clipboard:copy
-URxvt.keysym.M-v:   perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
