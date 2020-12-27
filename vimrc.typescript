@@ -1,0 +1,64 @@
+if (has("nvim"))
+ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'jparise/vim-graphql'        " GraphQL syntax
+Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
+
+" nerdtree block
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Nopik/vim-nerdtree-direnter'
+
+" theme
+
+Plug 'drewtempelmeyer/palenight.vim'
+
+call plug#end()
+
+" theme config
+
+set background=dark
+colorscheme palenight
+let g:lightline = { 'colorscheme': 'palenight' }
+let g:airline_theme = "palenight"
+
+
+let g:coc_global_extensions = [ 'coc-tsserver' ]
+
+filetype plugin indent on
+"set indent space number
+:set shiftwidth=2
+
+nmap <S-Up> V
+nmap <S-Down> V
+nmap <Space> <CR>
+
+"" these are mapped in visual mode
+vmap <S-Up> k
+vmap <S-Down> j
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
+nmap <silent> F2 <Plug>(coc-diagnostic-next)
+
+" Remap keys for applying codeAction to the current line.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" " Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+
+"To code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
